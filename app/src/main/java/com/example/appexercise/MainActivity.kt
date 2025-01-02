@@ -13,6 +13,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         try {
             super.onCreate(savedInstanceState)
+
             setContentView(R.layout.activity_main)
 
             val navHostFragment = supportFragmentManager
@@ -24,6 +25,11 @@ class MainActivity : AppCompatActivity() {
                 return
             }
 
+            if (navHostFragment.navController == null) {
+                Log.e("MainActivity", "NavController not found")
+                Toast.makeText(this, "Navigation initialization failed", Toast.LENGTH_LONG).show()
+                return
+            }
             navController = navHostFragment.navController
             
         } catch (e: Exception) {
