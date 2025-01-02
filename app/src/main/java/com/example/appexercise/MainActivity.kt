@@ -25,11 +25,6 @@ class MainActivity : AppCompatActivity() {
                 return
             }
 
-            if (navHostFragment.navController == null) {
-                Log.e("MainActivity", "NavController not found")
-                Toast.makeText(this, "Navigation initialization failed", Toast.LENGTH_LONG).show()
-                return
-            }
             navController = navHostFragment.navController
             
         } catch (e: Exception) {
