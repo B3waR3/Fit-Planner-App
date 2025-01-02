@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:id="@+id/nav_graph"
+
+    app:startDestination="@id/homeFragment">
+
+
+
+    <fragment
+
+        android:id="@+id/homeFragment"
+
+        android:name="com.example.appexercise.ui.HomeFragment"
+
+        android:label="Home"
+
+        tools:layout="@layout/fragment_home">
+
+        <action
+
+            android:id="@+id/action_homeFragment_to_allExercisesFragment"
+
+            app:destination="@id/allExercisesFragment" />
+
+        <action
+
+            android:id="@+id/action_homeFragment_to_myWorkoutsFragment"
+
+            app:destination="@id/myWorkoutsFragment" />
+
+    </fragment>
+
+
+
+    <fragment
+
+        android:id="@+id/allExercisesFragment"
+
+        android:name="com.example.appexercise.ui.AllExercisesFragment"
+
+        android:label="All Exercises"
+
+        tools:layout="@layout/fragment_all_exercises">
+
+        <action
+
+            android:id="@+id/action_allExercisesFragment_to_exerciseDetailFragment"
+
+            app:destination="@id/exerciseDetailFragment" />
+
+    </fragment>
+
+
+
+    <fragment
+
+        android:id="@+id/myWorkoutsFragment"
+
+        android:name="com.example.appexercise.ui.MyWorkoutsFragment"
+
+        android:label="My Workouts"
+
+        tools:layout="@layout/fragment_my_workouts" >
+        <action
+            android:id="@+id/action_myWorkoutsFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+
+
+
+    <fragment
+
+        android:id="@+id/exerciseDetailFragment"
+
+        android:name="com.example.appexercise.ui.ExerciseDetailFragment"
+
+        android:label="Exercise Details"
+
+        tools:layout="@layout/fragment_exercise_detail">
+
+        <argument
+
+            android:name="exercise"
+
+            app:argType="com.example.appexercise.data.Exercise" />
+
+        <action
+
+            android:id="@+id/action_exerciseDetailFragment_to_myWorkoutsFragment"
+
+            app:destination="@id/myWorkoutsFragment"
+
+            app:popUpTo="@id/homeFragment"
+
+            app:popUpToInclusive="false" />
+    </fragment>
+
+</navigation>

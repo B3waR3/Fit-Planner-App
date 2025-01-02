@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="NumberPickerStyle">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColorPrimary">?attr/colorPrimary</item>
+        <item name="android:colorControlNormal">?attr/colorPrimary</item>
+    </style>
+</resources> 
